@@ -1,6 +1,6 @@
 //
 //  ColorSchemedView.swift
-//  
+//
 //
 //  Created by Alex Nagy on 14.02.2021.
 //
@@ -9,12 +9,12 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 struct ColorSchemedView<Content: View>: View {
-    
+
     @EnvironmentObject public var colorSchemeManager: ColorSchemeManager
     @Environment(\.colorScheme) public var deviceColorScheme: ColorScheme
-    
+
     public let content: () -> Content
-    
+
     public var body: some View {
         content()
             .colorScheme(colorSchemeManager.colorScheme.systemColorScheme())
